@@ -33,5 +33,6 @@ if ($supa_res) {
 } else {
     echo "Error in Supabase: " . pg_last_error($supa_conn) . "<br>";
 }
-
+header("Location: login.html");
+exit;
 ?>
