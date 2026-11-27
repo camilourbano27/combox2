@@ -15,7 +15,7 @@ $p_assword = $_POST['password'];
 $pass_enc = md5($p_assword);
 
 $sql = "
-    SELECT id, firstname, lastname, mobile_phone, email, password
+    SELECT id, firstname, lastname, mobile_phone, email, password, photo_url
     FROM users
     WHERE email = $1 AND password = $2
     LIMIT 1
@@ -37,8 +37,9 @@ if (pg_num_rows($supa_res) > 0) {
     $_SESSION['email'] = $user['email'];
     $_SESSION['firstname'] = $user['firstname'];
     $_SESSION['lastname'] = $user['lastname'];
+   $_SESSION['photo_url'] = $user['photo_url'] ?? '';
 
-    header('Location: index.html');
+    header('Location: index.php');
     exit;
 } else {
     echo "❌ Correo o contraseña incorrectos.<br>";

@@ -21,11 +21,9 @@ $conn = pg_connect("
 
 
  
- if (!$conn){
-    die("Error supa connection !!!");
- } else{
-    echo "<br>supa Connection successs!!!";
- }
+ if (!$conn) {
+    die("Error de conexión con Supabase.");
+}
 
 
 ?>
